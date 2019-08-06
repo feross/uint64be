@@ -1,5 +1,3 @@
-var bufferAlloc = require('buffer-alloc')
-
 var UINT_32_MAX = Math.pow(2, 32)
 
 exports.encodingLength = function () {
@@ -7,7 +5,7 @@ exports.encodingLength = function () {
 }
 
 exports.encode = function (num, buf, offset) {
-  if (!buf) buf = bufferAlloc(8)
+  if (!buf) buf = Buffer.alloc(8)
   if (!offset) offset = 0
 
   var top = Math.floor(num / UINT_32_MAX)
